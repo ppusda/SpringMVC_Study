@@ -40,7 +40,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         //paramMap을 넘겨준다.
         Map<String, String> paramMap = createParamMap(request);
 
-        ModelView mv = controller.process(paramMap);
+        ModelView mv = controller.process(paramMap); // viewName을 가져온다 혹은 + model에 파라미터 정보 세팅
 
         String viewName = mv.getViewName();// 논리이름 ex_) "new-form"을 가져온다
         MyView view = viewResolver(viewName);
@@ -65,5 +65,4 @@ public class FrontControllerServletV3 extends HttpServlet {
  * FrontController V3
  * 서블릿에 종속되어있던 각 Controller들을 해방시켜주었다!
  * 뷰 이름의 중복되는 부분을 따로 처리해주었다.
- *
  */
